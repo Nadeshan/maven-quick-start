@@ -1,13 +1,23 @@
 package clinic.programming.training;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.String;
 
 public class Application {
 	
-	public void greet(){
+	public void greet(String[] arg){
 		
 		List<String> greetings = new ArrayList<>();
 		greetings.add("Hello");
+		greetings.add("Vanakkam");
+		greetings.add("Haai");
+
+		for (String ar : arg){
+
+			greetings.add(ar);
+
+		}
+
 		
 		for (String greeting : greetings){
 			System.out.println("Greeting: "+greeting);
@@ -23,6 +33,6 @@ public class Application {
     public static void main (String[] args) {
     	System.out.println ("Starting Application");
 		Application app = new Application();
-		app.greet();
+		app.greet(args);//Need to provide commandline arguements for greeting..!
     }
 }
