@@ -17,6 +17,7 @@ public class ApplicationTest {
     @Test
     public void testWordCountString() {
         int count = app.countWords("this is a test");
+        System.out.println(count);
         assertTrue(count == 4);
     }
 
