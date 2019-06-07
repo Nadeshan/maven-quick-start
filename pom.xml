@@ -45,12 +45,19 @@
           </execution>
         </executions>
         <configuration>
+          <archive>
+          <!-- To make the jar Executable with a manifiest.mf entry -->
+        	<manifest>
+         	 <addClasspath>true</addClasspath>
+          	 <mainClass>clinic.programming.training.Application</mainClass>
+        	</manifest>
+      	  </archive>
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
         </configuration>
       </plugin>
-    </plugins>
+     </plugins>
   </build>
 
 
