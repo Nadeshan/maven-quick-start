@@ -7,6 +7,15 @@
   <groupId>clinic.programmming</groupId>
   <artifactId>maven-quick-start</artifactId>
   <version>1.1</version>
+  <packaging>jar</packaging>
+
+  <distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Internal repo</name>
+         <url>file:///E:/Learning/Maven/LocalRepo</url>
+       </repository>
+  </distributionManagement>
 
   <dependencies>
 	<dependency>
@@ -45,7 +54,7 @@
           </execution>
         </executions>
         <configuration>
-          <archive>
+          <archive unless="maven.archive.skip">
           <!-- To make the jar Executable with a manifiest.mf entry -->
         	<manifest>
          	 <addClasspath>true</addClasspath>
@@ -57,6 +66,44 @@
           </descriptorRefs>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <configuration>
+
+              <target unless="maven.test.skip">
+		<echo message="================================================"/>
+                <echo message="To skip me, just call mvn -Dmaven.test.skip=true"/>
+		<echo message="================================================"/>
+              </target>
+
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+	
+       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.2.1</version>
+            <configuration>
+	      <executable>git</executable>
+              <arguments>
+              <argument>log</argument>
+                         
+              </arguments>
+
+            </configuration>
+            </plugin>
+
      </plugins>
   </build>
 
