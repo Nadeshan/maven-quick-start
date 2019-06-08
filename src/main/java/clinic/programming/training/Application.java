@@ -29,7 +29,7 @@ public class Application {
 
 		
 		for (String greeting : greetings){
-			System.out.println("Greeting: "+greeting);
+			System.out.println("Greeting : "+greeting);
 		}
 
 	}
