@@ -77,7 +77,7 @@
             <configuration>
 
               <target unless="maven.test.skip">
-		<echo message="================================================"/>
+		<echo message="=-=============================================="/>
                 <echo message="To skip me, just call mvn -Dmaven.test.skip=true"/>
 		<echo message="================================================"/>
               </target>
