@@ -11,10 +11,14 @@
 
   <distributionManagement>
        <repository>
-         <id>internal.repo</id>
-         <name>Internal repo</name>
-         <url>file:///E:/Learning/Maven/LocalRepo</url>
-       </repository>
+         <id>maven-test-release</id>
+         <name>Centos Hosted Nexus2 release Repo</name>
+         <!--url>file:///E:/Learning/Maven/LocalRepo</url-->
+		  
+		 <url>http://192.168.31.131:9443/nexus/content/repositories/maven-test-release/</url>
+	   </repository>
+		 
+       
   </distributionManagement>
 
   <dependencies>
