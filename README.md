@@ -1,3 +1,3 @@
 # maven-quick-start
 Doing maven experiments
-With github
+With Gitlab Now
